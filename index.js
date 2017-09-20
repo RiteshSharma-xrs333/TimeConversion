@@ -16,11 +16,9 @@ $(document).ready(function(){
     return(sHours + ":" + sMinutes);  
   }
 
-	function showTime() {
-		console.log('hi');
-	}
-
   $('input.timepicker').timepicker({ 
-  	timeFormat: 'h:mm p' 
+  	change: function showTime() {
+			console.log(checkValidTime($(this).val()));
+		}
   });
 });
